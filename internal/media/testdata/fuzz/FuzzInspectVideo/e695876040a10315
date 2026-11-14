@@ -1,0 +1,2 @@
+go test fuzz v1
+[]byte("YUV4MPEG2 W2 H02 F01:1 A0 00\x80000000000\n0000\n")

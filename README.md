@@ -15,9 +15,14 @@ The implementation includes:
 - per-identifier locking and atomic directory publication;
 - a deterministic ZIP bundle with a matching receipt.
 
-Automated tests are intentionally deferred. A later task stage will add the
-test suite, fixtures, race checks, and test command. This baseline ships
-production workflow checks that exercise the implemented routes.
+The WAV/Y4M decoder boundaries ship with a repeatable fuzzing and regression
+harness: table-driven boundary corpora, Go native fuzz targets with a
+committed, replayable corpus, whole-pipeline content-meaning invariants, and
+resource-runaway guards. See [TESTING.md](TESTING.md). Production defects
+uncovered by that work are tracked separately in
+[defects/DEFECTS.md](defects/DEFECTS.md) with minimal binary evidence; the
+production code and the strict spec assertions are not weakened to match each
+other.
 
 ## Requirements
 

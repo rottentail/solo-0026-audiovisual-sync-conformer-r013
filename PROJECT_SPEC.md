@@ -192,6 +192,11 @@ They are not a substitute for the later test suite.
 
 ## Deferred testing boundary
 
-Automated tests are intentionally omitted from this baseline. The later task
-stage owns creation of the test harness, fixtures, race checks, and test
-command. This repository ships only executable production workflow checks.
+The baseline originally shipped without automated tests. That boundary is now
+closed for the media decoders: `internal/media` contains table-driven WAV/Y4M
+regression corpora, Go native fuzz targets with a committed replayable corpus,
+pipeline content-meaning invariants, and resource-runaway guards
+(see `TESTING.md`). Spec-vs-implementation gaps found while building the
+harness are tracked with minimal evidence under `defects/` rather than folded
+into weakened assertions. The three executable production workflow checks in
+`cmd/syncflowcheck` remain supported alongside the new suite.
